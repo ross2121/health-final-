@@ -91,6 +91,7 @@ export const HospitalMap = () => {
               onClose={() => setSelectedHospital(null)}
               closeOnClick={false}
               anchor="top"
+              className="z-50"
             >
               <div className="p-2 w-72 h-60 text-black">
                 <h3 className="text-lg font-semibold">{selectedHospital.Name}</h3>
