@@ -36,6 +36,7 @@ export default function LoginForm() {
         router.push("/"); // Use router after login success
         const {token}=response.data;
         localStorage.setItem("authtoken",token);
+        localStorage.setItem("user",data.email);
         console.log("Login successful", response.data);
       }
     } catch (err: unknown) {

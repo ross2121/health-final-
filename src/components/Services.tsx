@@ -20,9 +20,9 @@ export default function Services() {
           
       />
       <ServiceCard
-      link="/"
-        title="24/7 Medicine"
-        description="Emergency at Your Doorstep.  COMING SOON"
+      link="/user/map"
+        title="User map"
+        description="Information at Your Doorstep."
         bgColor="bg-[#E7C2D4]"
         image="/assets/horse2.png"
       />
