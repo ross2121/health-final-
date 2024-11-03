@@ -1,0 +1,69 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+model Admin {
+  id       Int    @id @default(autoincrement())
+  email    String @unique
+  name     String
+  password String
+  Hospital String
+  Disease  Disease[]
+  // otp       Otp @relation(fields: [otpid],references: [id])
+  // otpid   Int
+  
+}
+model User{
+  id    Int   @id @default(autoincrement())
+  email  String  @unique
+  name    String 
+  password  String
+  Pincode    String 
+ }
+ 
+
+model Otp {
+  id      Int    @id @default(autoincrement())
+  otp     String
+  email   String  
+  // admin   Admin[]
+  // admin   Admin  @relation(fields: [adminid], references: [id])
+  // adminid  Int
+  // @@index([email]) // Optional for performance
+}
+model Disease{
+  id  Int  @id @default(autoincrement())
+  patient_email   String
+  admin_email     String
+  Name              String
+  Disease            String
+  Precaution         String
+  Severe              String
+  Address            String
+  lat                 Float
+  lng                Float
+  File                String?
+  Pincode             String
+  admin       Admin @relation(fields: [adminid],references: [id])
+  // user         User  @relation(fields: [userid],references: [id])
+  // userid       Int
+  adminid     Int       
+}
+
+
+// model Hospital{
+//   id    Int @id @default(autoincrement())
+//   Name   String
+//   author  Admin
+
+// }
