@@ -48,7 +48,7 @@ export default function SignupFormDemo() {
     try {
       const response = await axios.post("/api/userregister", signupdata);
       if (response.status === 200) {
-        router.push("/user/auth/otpu");
+        router.push("/user/otpu");
         localStorage.setItem("tempUserData", JSON.stringify(signupdata));
       }
     } 
@@ -143,9 +143,11 @@ export default function SignupFormDemo() {
             {loading ? "Signing up...." : "Sign up"}
             <BottomGradient />
           </button>
+         
 
           <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
         </form>
+
       </div>
     </div>
   );

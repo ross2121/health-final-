@@ -48,7 +48,7 @@ export default function SignupFormDemo() {
     try {
       const response = await axios.post("/api/auth", signupdata);
       if (response.status === 200) {
-        router.push("/admin/auth/otp");
+        router.push("/admin/otp");
         localStorage.setItem("tempUserData", JSON.stringify(signupdata));
       }
     } 
@@ -56,7 +56,7 @@ export default function SignupFormDemo() {
       if (error instanceof Error && 'response' in error) {
         const axiosError = error as { response: { data: { message: string } } };
         if (axiosError.response && axiosError.response.data && axiosError.response.data.message) {
-          setError(axiosError.response.data.message); // Backend email error
+          setError(axiosError.response.data.message); 
         } else {
           setError("Signup failed. Please try again later.");
         }
@@ -121,7 +121,7 @@ export default function SignupFormDemo() {
               disabled={loading}
             />
           </LabelInputContainer>
-          {/* <LabelInputContainer> */}
+         
           <LabelInputContainer className="mb-4 text-white">
             <Label htmlFor="hospital">Hospital</Label>
             <Input

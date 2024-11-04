@@ -30,11 +30,11 @@ export function withAuth<T extends JSX.IntrinsicAttributes>(
         if (userRole === requiredRole) {
           setIsAuthorized(true);
         } else {
-          router.push("/admin/login");
+          router.push("/admin/signup");
         }
       } catch (error) {
         console.error("Invalid token:", error);
-        router.push("/admin/sign-up");
+        router.push("/admin/signup");
       }
     }, [router]);
 
