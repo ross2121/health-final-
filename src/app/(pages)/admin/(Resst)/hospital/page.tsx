@@ -1,4 +1,4 @@
-import {HospitalForm}  from "@/components/example/mapmain";
+import HospitalForm  from "@/components/example/mapmain";
 import { cookies } from 'next/headers'
  
 async function getCookieData() {

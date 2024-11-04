@@ -14,6 +14,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "./button";
 import { useMap } from "react-map-gl";
 import { SearchPlace } from "../map/searchplaces";
+import { withAuth } from "./useauth";
 
 
 export const HospitalForm = () => {
@@ -217,6 +218,7 @@ export const HospitalForm = () => {
     </div>
   );
 };
+export default withAuth(HospitalForm,"admin");
 
 const LabelInputContainer = ({
   children,
