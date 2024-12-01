@@ -33,7 +33,7 @@ export default function LoginForm() {
     try {
       const response = await axios.post("/api/login", data); // Use relative URL
       if (response.status === 200) {
-        router.push("/admin/auth"); 
+        router.push("/"); 
         const {token}=response.data;
         localStorage.setItem("authtoken",token);
         localStorage.setItem("user",data.email);
